@@ -4,6 +4,13 @@ using System.Text;
 
 namespace BankApp
 {
+    enum AccountType
+    {
+        Checking,
+        Savings,
+        CD,
+        Loan
+    }
     /// <summary>
     /// Account that represents bank account.
     /// here you can withdraw or deposit money
@@ -26,8 +33,8 @@ namespace BankApp
         /// Unique number asscociated with a customer for their account
         /// </summary>
         
-        public int AccountNumber { get; set; }
-        /// <summary> 
+        public int AccountNumber { get; private set; }
+        /// <summary>  
         /// Email address of the account holder
         /// </summary>
         public string EmailAddress { get; set; }
@@ -38,13 +45,13 @@ namespace BankApp
         // private set makes sure setting can be done only by class.
         //in other words it can be set only by bank
         /// <summary>
-        /// Type of account
+        /// Type of account. AccountType in blue is enum data type
         /// </summary>
-        public string AccountType { get; set; }
+        public AccountType AccountType { get; set; }
         /// <summary>
         /// Date when the account was created 
         /// </summary>
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; private set; }
 
      
     #endregion
@@ -56,9 +63,13 @@ namespace BankApp
      
     public Account()
     {
-        lastAccountNumber++;
-        AccountNumber = lastAccountNumber;
+        //lastAccountNumber++;
+        //AccountNumber = lastAccountNumber;
+        AccountNumber = ++lastAccountNumber;
+        CreatedDate = DateTime.Now; 
     }
+
+
     #endregion
    
 

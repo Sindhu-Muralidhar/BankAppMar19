@@ -6,14 +6,19 @@ namespace BankApp
     {
         static void Main(string[] args)
         {
-            var a1 = new Account();
-            //"new" word allows us to create an instance.So basically a1 
-            //is an instance of the class Account.When "new" is used a class constructor is
-            a1.AccountNumber = 123456;
-           
-            a1.EmailAddress = "test@test.com";
-            a1.AccountType = "Checking";
-            
+            Console.Write("**********");
+            Console.WriteLine("welcome to my bank!");
+            Console.WriteLine("**********");
+            Console.WriteLine("0.Exit");
+            Console.WriteLine("1.Create an account");
+            Console.WriteLine("2.Deposit");
+            Console.WriteLine("3.Withdraw");
+            Console.WriteLine("4.Print my accounts");
+            Console.WriteLine("")
+
+
+
+
 
         }
     }
